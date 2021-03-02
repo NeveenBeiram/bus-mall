@@ -136,7 +136,7 @@ function randomNumber( min, max ) {
 
   let index2 = Math.floor( Math.random() * ( max - min + 1 ) ) + min;
   for( let i = 0;i < indexs.length;i++ ){
-    if ( index2 === indexs[i] ){
+    while ( index2 === indexs[i] ){
       index2 = Math.floor( Math.random() * ( max - min + 1 ) ) + min;
     }
   }return( index2 );
