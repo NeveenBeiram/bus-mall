@@ -73,12 +73,6 @@ function renderNewProduct() {
   Product.all[rightIndex].shown++;
   Product.all[lastIndex].shown++;
 
-  //console.log( localStorage.setItem( 'Products',JSON.stringify( Product.all ) ) );
-  //   localStorage.setItem( 'products', JSON.stringify( Product.all ) );
-  //   const data = localStorage.getItem('products');
-  // if(data) {
-  //     const objData = JSON.parse(data);
-  //     Product.all = objData;
 
 }
 
@@ -106,7 +100,7 @@ function handelClick( event ) {
     }
   }removeEventListener( 'click',handelClick );
 
-  localStorage.setItem( 'Products', JSON.stringify( Product.all ) );
+  localStorage.setItem( 'Products', JSON.stringify( Product.all ) ); //set localStorage
 
   button.addEventListener( 'click',handelButton );
 }

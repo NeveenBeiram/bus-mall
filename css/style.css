@@ -14,7 +14,7 @@ img{
 }
 
 header{
-    background-color: darkslategrey;
+    background-color: rgb(0, 0, 0);
     display: grid;
     grid-template-columns: 100px 1fr; 
     align-items: center;
@@ -26,7 +26,7 @@ height: 50px;
 
 .container{
     display: grid;
-    grid-template-rows: 100px minmax(calc(100vh-170px),fr)50px ;
+    grid-template-rows: 100px minmax(calc(100vh - 170px),1fr) 50px ; /*calc(100vh-170px)*/
 gap:10px;
 }
 
@@ -41,7 +41,7 @@ gap:10px;
 footer{
     display: flex;
     align-items: center;
-    background-color: darkslategrey;
+    background-color: rgb(0, 0, 0);
     color: wheat;
     text-align: center;
     height: 50px;
@@ -52,7 +52,19 @@ width: 100%;
 }
 #ol{
     list-style:circle;
+columns: 2;
+}
 
+li{
+   line-height: 25px; 
+   padding-left: 10px;
+
+}
+li:nth-child(odd){
+    background: rgb(156, 89, 201);
+}
+li:nth-child(even){
+    background: rgb(169, 155, 175);
 }
 
 button{
