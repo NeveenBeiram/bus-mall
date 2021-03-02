@@ -73,6 +73,13 @@ function renderNewProduct() {
   Product.all[rightIndex].shown++;
   Product.all[lastIndex].shown++;
 
+  //console.log( localStorage.setItem( 'Products',JSON.stringify( Product.all ) ) );
+  //   localStorage.setItem( 'products', JSON.stringify( Product.all ) );
+  //   const data = localStorage.getItem('products');
+  // if(data) {
+  //     const objData = JSON.parse(data);
+  //     Product.all = objData;
+
 }
 
 
@@ -99,6 +106,8 @@ function handelClick( event ) {
     }
   }removeEventListener( 'click',handelClick );
 
+  localStorage.setItem( 'Products', JSON.stringify( Product.all ) );
+
   button.addEventListener( 'click',handelButton );
 }
 
@@ -109,9 +118,11 @@ function handelButton( ){
     const li = document.createElement( 'li' );
     parentElement.appendChild( li );
     li.textContent = `${Product.all[i].name} is clicked ${Product.all[i].clicks} and shown ${Product.all[i].shown}`;
+
   }
 
   renderChart();
+
 
   button.removeEventListener( 'click',handelButton );
   button.innerText = 'reset';
@@ -191,3 +202,14 @@ function renderChart() {
   } );
 }
 
+function getData() {
+  const data = localStorage.getItem( 'Products' );
+
+  if( data ) {
+    const objData = JSON.parse( data );
+    Product.all = objData;
+    renderNewProduct();
+  }
+}
+
+getData();
