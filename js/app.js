@@ -97,10 +97,10 @@ function handelClick( event ) {
       renderNewProduct();
 
 
+      localStorage.setItem( 'Products', JSON.stringify( Product.all ) ); //set localStorage
     }
   }removeEventListener( 'click',handelClick );
 
-  localStorage.setItem( 'Products', JSON.stringify( Product.all ) ); //set localStorage
 
   button.addEventListener( 'click',handelButton );
 }
